@@ -425,21 +425,21 @@ int main() {
                                                 long long int data=0;
                                                 while(1){
                                                 if(client->request[i]=='-'){
-                                                    for(con=0;con<28;con++){
-                                                        if(client->request[con]!='-'){
+                                                    for(con=0;con<29;con++){
+                                                        if(client->request[con+i]!='-'){
                                                             jud = 1;
                                                             break;
                                                         }
                                                     }
                                                 }
-                                                if(jud==0&&con==28)
+                                                if(jud==0&&con==29)
                                                     break;
                                                 jud=0;
                                                 con=0;
                                                 input[data] = client->request[i];
                                                 i++;
                                                 data++;
-                                                if(data>700000){
+                                                if(data>600000){
                                                     printf("out of bound\n");
                                                     break;
                                                 }
