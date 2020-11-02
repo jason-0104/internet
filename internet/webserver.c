@@ -382,6 +382,9 @@ int main() {
                             else if((strstr(client->request, "jpeg"))!=NULL){
                                 fp = fopen ("save_client.jpeg", "w");
                             }
+                            else if((strstr(client->request, "txt"))!=NULL){
+                                fp = fopen ("save_client.txt", "w");
+                            }
                             long long int i=0;
                             int k=0;
                             char p[100];
@@ -425,14 +428,14 @@ int main() {
                                                 long long int data=0;
                                                 while(1){
                                                 if(client->request[i]=='-'){
-                                                    for(con=0;con<29;con++){
+                                                    for(con=0;con<27;con++){
                                                         if(client->request[con+i]!='-'){
                                                             jud = 1;
                                                             break;
                                                         }
                                                     }
                                                 }
-                                                if(jud==0&&con==29)
+                                                if(jud==0&&con==27)
                                                     break;
                                                 jud=0;
                                                 con=0;
@@ -444,7 +447,7 @@ int main() {
                                                     break;
                                                 }
                                             }
-                                            fwrite(input,data,1,fp);
+                                            fwrite(input,1,data,fp);
                                             fclose(fp);
                                                 break;
                                             }
